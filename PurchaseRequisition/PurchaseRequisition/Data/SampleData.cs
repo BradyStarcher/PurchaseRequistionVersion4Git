@@ -122,9 +122,9 @@ namespace PurchaseRequisition.Data
             {
                 var user = new User
                 {
-                    UserName = "donna@develop.com",
-                    Email = "donna@develop.com",
-                    FirstName = "Donna",
+                    UserName = "carrie@develop.com",
+                    Email = "carrie@develop.com",
+                    FirstName = "Carrie",
                     LastName = "Budget",
                     Division = "Budget",
                     Department = "Budget",
@@ -145,14 +145,221 @@ namespace PurchaseRequisition.Data
             {
                 var user = new User
                 {
-                    UserName = "vicki@develop.com",
-                    Email = "vicki@develop.com",
-                    FirstName = "Vicki",
+                    UserName = "cheri@develop.com",
+                    Email = "cheri@develop.com",
+                    FirstName = "Cheri",
                     LastName = "Auditor",
                     Division = "Auditor",
                     Department = "Auditor",
                     JobTitle = "Auditor",
                     StartDate = "January 1, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("chris@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "chris@develop.com",
+                    Email = "chri@develop.com",
+                    FirstName = "Chris",
+                    LastName = "Gilmer",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "President",
+                    StartDate = "August 20, 2018",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("alice@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "alice@develop.com",
+                    Email = "alice@develop.com",
+                    FirstName = "Alice",
+                    LastName = "Harris",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "CFO",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("alice@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "alice@develop.com",
+                    Email = "alice@develop.com",
+                    FirstName = "Alice",
+                    LastName = "Harris",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "CFO",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("chad@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "chad@develop.com",
+                    Email = "chad@develop.com",
+                    FirstName = "Chad",
+                    LastName = "VP",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "Academic Dean and Academic Vice President",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("tony@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "tony@develop.com",
+                    Email = "tony@develop.com",
+                    FirstName = "Tony",
+                    LastName = "Dean",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "Student Dean",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("alice@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "alice@develop.com",
+                    Email = "alice@develop.com",
+                    FirstName = "Alice",
+                    LastName = "Harris",
+                    Division = "None",
+                    Department = "None",
+                    JobTitle = "CFO",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("steve@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "steve@develop.com",
+                    Email = "steve@develop.com",
+                    FirstName = "Steve",
+                    LastName = "Computer",
+                    Division = "STEM",
+                    Department = "CS",
+                    JobTitle = "Professor",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("dave@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "dave@develop.com",
+                    Email = "dave@develop.com",
+                    FirstName = "Dave",
+                    LastName = "Maintence",
+                    Division = "Administration",
+                    Department = "Maintence",
+                    JobTitle = "Head of Maintence",
+                    StartDate = "August 12, 1997",
+                    EndDate = "N/A",
+                    Campus = "Parkersburg"
+                };
+
+                var result = await userManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    await userManager.AddPasswordAsync(user, password);
+                    await userManager.AddToRoleAsync(user, role4);
+                }
+            }
+            if (await userManager.FindByNameAsync("bob@develop.com") == null)
+            {
+                var user = new User
+                {
+                    UserName = "bob@develop.com",
+                    Email = "bob@develop.com",
+                    FirstName = "Bob",
+                    LastName = "Janitor",
+                    Division = "Administration",
+                    Department = "Maintence",
+                    JobTitle = "Janitor",
+                    StartDate = "August 12, 1997",
                     EndDate = "N/A",
                     Campus = "Parkersburg"
                 };

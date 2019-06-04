@@ -10,6 +10,7 @@
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h4>Create a new account.</h4>
+            <!--Hi, this is how to register!   :) -->
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -68,8 +69,6 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-        </form>
-        <form method="post">
             <button type="submit" class="btn btn-default">Add User</button>
         </form>
     </div>
