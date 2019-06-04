@@ -19,8 +19,9 @@ namespace PurchaseRequisition.WebServiceAccess.Base
         protected readonly string UserUpdateUri;
         protected readonly string UserCreateUri;
         protected readonly string UserChangePasswordUri;
+        protected readonly string UserFindUri;
 
-         protected WebApiCallsBase(IWebServiceLocator settings)
+        protected WebApiCallsBase(IWebServiceLocator settings)
         {
             ServiceAddress = settings.ServiceAddress;
             BaseUri = $"{ServiceAddress}api/";
@@ -32,6 +33,7 @@ namespace PurchaseRequisition.WebServiceAccess.Base
             UserUpdateUri = $"{UserBaseUri}Update/";
             UserCreateUri = $"{UserBaseUri}Create/";
             UserChangePasswordUri = $"{UserBaseUri}ChangePassword/";
+            UserFindUri = $"{UserBaseUri}Find/";
         }
          
          internal async Task<string> GetJsonFromGetResponseAsync(string uri)

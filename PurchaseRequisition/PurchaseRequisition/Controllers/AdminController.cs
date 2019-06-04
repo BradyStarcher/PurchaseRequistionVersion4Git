@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PurchaseRequisition.Models;
 using PurchaseRequisition.ViewModels;
+using PurchaseRequisition.WebServiceAccess.Base;
 
 namespace PurchaseRequisition.Controllers
 {
@@ -11,11 +12,13 @@ namespace PurchaseRequisition.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        private readonly IWebApiCalls _webApiCalls;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AdminController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public AdminController(IWebApiCalls webApiCalls, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
+            _webApiCalls = webApiCalls;
             _userManager = userManager;
             _roleManager = roleManager;
         }
@@ -25,15 +28,14 @@ namespace PurchaseRequisition.Controllers
         {
             return View();
         }
-
-        /*
+        
          [HttpGet]
         public async Task<IActionResult> ResetAccount()
         {
             var users = await _webApiCalls.GetUserAsync();
 
             return View(users);
-        }*/
+        }
 
         [HttpGet("{userId}")]
         public async Task<IActionResult> ChangePassword(string userId)

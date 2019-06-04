@@ -16,5 +16,6 @@ namespace PurchaseRequisition.WebServiceAccess.Base
         Task<string> UpdateUserAsync(string userId, User user);
         Task DeleteUserAsync(string userId);
         Task<string> ChangePasswordAsync(string userId, User user, string currPassword, string newPassword);
+        Task<IList<User>> GetUserAsync(int skip = 0, int take = 10);
     }
 }
