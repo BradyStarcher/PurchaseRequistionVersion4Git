@@ -8,6 +8,14 @@
     <h1>Admin Menu</h1>
 </header>
 
-<article class="setting-box">
+<article>
     <h3><a asp-controller="Admin" asp-action="ResetAccount">Reset Account</a></h3>
+    <h3><a asp-area="Identity" asp-page="/Account/Register">Add New User</a></h3>
+    <h3><a asp-area="" asp-controller="Division" asp-action="Index">View Divisions</a></h3>
+    <h3><a asp-area="" asp-controller="Department" asp-action="Index">View Departments</a></h3>
+    <h3><a asp-area="" asp-controller="Role" asp-action="Index">Role Management</a></h3>
+    <h3><a asp-area="" asp-controller="Address" asp-action="Index">View Addresses</a></h3>
+    <h3><a asp-area="" asp-controller="Campus" asp-action="Index">View Campuses</a></h3>
+    <h3><a asp-area="" asp-controller="College" asp-action="Index">View Colleges</a></h3>
+    <h3><a asp-area="" asp-controller="Vendor" asp-action="Index">Browse Vendors</a></h3>
 </article>
