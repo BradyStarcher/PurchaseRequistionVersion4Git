@@ -16,7 +16,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
-            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean"))
+            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean") ||  User.IsInRole("DepoHead"))
             {
                 <div class="form-group">
                     <label asp-for="Status" class="control-label"></label>
@@ -47,7 +47,7 @@
                     <span asp-validation-for="Budget" class="text-danger"></span>
                 </div>
             }
-            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean"))
+            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean") ||  User.IsInRole("DepoHead"))
             {
                 <div class="form-group">
                     <label asp-for="ApproverCode" class="control-label"></label>
