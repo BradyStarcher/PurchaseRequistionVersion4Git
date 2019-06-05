@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,12 +15,15 @@ namespace PurchaseRequisition.Models
 
         public string Description { get; set; }
 
-        public int PricePerUnit { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal PricePerUnit { get; set; }
 
+        [DataType(DataType.Currency)]
         public int RequestedPrice { get; set; }
 
         public int Quanity { get; set; }
 
+        [DataType(DataType.Currency)]
         public int TotalPrice { get; set; }
 
         public string FileAttachment { get; set; }
