@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<PurchaseRequisition.Models.Item>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +10,10 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if(SignInManager.IsSignedIn(User) && User.IsInRole("Member") || User.IsInRole("DeopHead"))
+    {
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -46,44 +52,48 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PricePerUnit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RequestedPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quanity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FileAttachment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vendor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chosen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Justification)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestedPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quanity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileAttachment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chosen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Justification)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Member") || User.IsInRole("DepoHead"))
+                    {   
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

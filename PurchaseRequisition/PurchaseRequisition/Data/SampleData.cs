@@ -127,7 +127,7 @@ namespace PurchaseRequisition.Data
                 if (result.Succeeded)
                 {
                     await userManager.AddPasswordAsync(user, password);
-                    await userManager.AddToRoleAsync(user, role2);
+                    await userManager.AddToRoleAsync(user, role9);
                 }
             }
             if (await userManager.FindByNameAsync("charles@develop.com") == null)
