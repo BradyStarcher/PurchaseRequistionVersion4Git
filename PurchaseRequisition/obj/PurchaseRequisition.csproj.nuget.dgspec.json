@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Brady\\source\\repos\\PurchaseRequisition\\PurchaseRequisition\\PurchaseRequisition.csproj": {}
+    "C:\\Users\\Brady\\source\\repos\\Version4PurchReq2019\\PurchaseRequistionVersion4Git\\PurchaseRequisition\\PurchaseRequisition.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Brady\\source\\repos\\PurchaseRequisition\\PurchaseRequisition\\PurchaseRequisition.csproj": {
+    "C:\\Users\\Brady\\source\\repos\\Version4PurchReq2019\\PurchaseRequistionVersion4Git\\PurchaseRequisition\\PurchaseRequisition.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Brady\\source\\repos\\PurchaseRequisition\\PurchaseRequisition\\PurchaseRequisition.csproj",
+        "projectUniqueName": "C:\\Users\\Brady\\source\\repos\\Version4PurchReq2019\\PurchaseRequistionVersion4Git\\PurchaseRequisition\\PurchaseRequisition.csproj",
         "projectName": "PurchaseRequisition",
-        "projectPath": "C:\\Users\\Brady\\source\\repos\\PurchaseRequisition\\PurchaseRequisition\\PurchaseRequisition.csproj",
+        "projectPath": "C:\\Users\\Brady\\source\\repos\\Version4PurchReq2019\\PurchaseRequistionVersion4Git\\PurchaseRequisition\\PurchaseRequisition.csproj",
         "packagesPath": "C:\\Users\\Brady\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Brady\\source\\repos\\PurchaseRequisition\\PurchaseRequisition\\obj\\",
+        "outputPath": "C:\\Users\\Brady\\source\\repos\\Version4PurchReq2019\\PurchaseRequistionVersion4Git\\PurchaseRequisition\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.9, )"
             }
           },
           "imports": [
