@@ -20,7 +20,7 @@ namespace PurchaseRequisition.Models
 
         public string Item { get; set; }
 
-        public string BudgetCode { get; set; }
+        public string Budget { get; set; }
 
         public string ApproverCode { get; set; }
 

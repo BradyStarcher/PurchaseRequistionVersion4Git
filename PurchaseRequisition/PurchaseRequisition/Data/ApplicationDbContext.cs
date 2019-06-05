@@ -13,7 +13,26 @@ namespace PurchaseRequisition.Data
             : base(options)
         {
         }
-        //private string connectionString = @"Server=localhost\SQLEXPRESS;database=CapstoneVThree;MultipleActiveResultSets=true;Trusted_Connection=True;";
+
+        public ApplicationDbContext()
+        {
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
+
+        private string connectionString = @"Server=localhost\SQLEXPRESS;database=capstone;MultipleActiveResultSets=true;Trusted_Connection=True;";
 
         public DbSet<PurchaseRequisition.Models.Address> Address { get; set; }
         public DbSet<PurchaseRequisition.Models.Budget> Budget { get; set; }
