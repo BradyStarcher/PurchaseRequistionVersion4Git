@@ -36,7 +36,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Member"))
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Member") || User.IsInRole("President")
+                       || User.IsInRole("Dean and VP") || User.IsInRole("Dean") || User.IsInRole("DepoHead"))
                     {
                         <li><a asp-area="" asp-controller="Order" asp-action="Index">View Orders</a></li>
                         <li><a asp-area="" asp-controller="Item" asp-action="Index">Browse Items</a></li>
@@ -86,6 +87,11 @@
                         <li><a asp-area="" asp-controller="Order" asp-action="Index">View Orders</a></li>
                         <li><a asp-area="" asp-controller="Item" asp-action="Index">Browse Items</a></li>
                         <li><a asp-area="" asp-controller="Vendor" asp-action="Index">Browse Vendors</a></li>
+                    }
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Purchasing"))
+                    {
+                        <li><a asp-area="" asp-controller="Budget" asp-action="Index">View Budgets</a></li>
+                        <li><a asp-area="" asp-controller="Order" asp-action="Index">View Orders</a></li>
                     }
                 </ul>
                 <partial name="_LoginPartial" />
