@@ -1,4 +1,7 @@
 ﻿@model PurchaseRequisition.Models.Order
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
 
 @{
     ViewData["Title"] = "Create";
@@ -37,16 +40,19 @@
                 <input asp-for="Budget" class="form-control" />
                 <span asp-validation-for="Budget" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ApproverCode" class="control-label"></label>
-                <input asp-for="ApproverCode" class="form-control" />
-                <span asp-validation-for="ApproverCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RejectionReason" class="control-label"></label>
-                <input asp-for="RejectionReason" class="form-control" />
-                <span asp-validation-for="RejectionReason" class="text-danger"></span>
-            </div>
+            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean"))
+            {
+                <div class="form-group">
+                    <label asp-for="ApproverCode" class="control-label"></label>
+                    <input asp-for="ApproverCode" class="form-control" />
+                    <span asp-validation-for="ApproverCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RejectionReason" class="control-label"></label>
+                    <input asp-for="RejectionReason" class="form-control" />
+                    <span asp-validation-for="RejectionReason" class="text-danger"></span>
+                </div>
+            }
             <div class="form-group">
                 <label asp-for="DivisionChair" class="control-label"></label>
                 <input asp-for="DivisionChair" class="form-control" />

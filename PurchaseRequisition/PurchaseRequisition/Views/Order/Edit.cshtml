@@ -1,4 +1,7 @@
 ﻿@model PurchaseRequisition.Models.Order
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,46 +16,58 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BusinessJustification" class="control-label"></label>
-                <input asp-for="BusinessJustification" class="form-control" />
-                <span asp-validation-for="BusinessJustification" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalCostOfItems" class="control-label"></label>
-                <input asp-for="TotalCostOfItems" class="form-control" />
-                <span asp-validation-for="TotalCostOfItems" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item" class="control-label"></label>
-                <input asp-for="Item" class="form-control" />
-                <span asp-validation-for="Item" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Budget" class="control-label"></label>
-                <input asp-for="Budget" class="form-control" />
-                <span asp-validation-for="Budget" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApproverCode" class="control-label"></label>
-                <input asp-for="ApproverCode" class="form-control" />
-                <span asp-validation-for="ApproverCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RejectionReason" class="control-label"></label>
-                <input asp-for="RejectionReason" class="form-control" />
-                <span asp-validation-for="RejectionReason" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DivisionChair" class="control-label"></label>
-                <input asp-for="DivisionChair" class="form-control" />
-                <span asp-validation-for="DivisionChair" class="text-danger"></span>
-            </div>
+            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean"))
+            {
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            }
+            @if (User.IsInRole("Member") || User.IsInRole("DepoHead"))
+            {
+                <div class="form-group">
+                    <label asp-for="BusinessJustification" class="control-label"></label>
+                    <input asp-for="BusinessJustification" class="form-control" />
+                    <span asp-validation-for="BusinessJustification" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TotalCostOfItems" class="control-label"></label>
+                    <input asp-for="TotalCostOfItems" class="form-control" />
+                    <span asp-validation-for="TotalCostOfItems" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item" class="control-label"></label>
+                    <input asp-for="Item" class="form-control" />
+                    <span asp-validation-for="Item" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Budget" class="control-label"></label>
+                    <input asp-for="Budget" class="form-control" />
+                    <span asp-validation-for="Budget" class="text-danger"></span>
+                </div>
+            }
+            @if (User.IsInRole("President") || User.IsInRole("Dean and VP") || User.IsInRole("Dean"))
+            {
+                <div class="form-group">
+                    <label asp-for="ApproverCode" class="control-label"></label>
+                    <input asp-for="ApproverCode" class="form-control" />
+                    <span asp-validation-for="ApproverCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RejectionReason" class="control-label"></label>
+                    <input asp-for="RejectionReason" class="form-control" />
+                    <span asp-validation-for="RejectionReason" class="text-danger"></span>
+                </div>
+            }
+            @if (User.IsInRole("Member") || User.IsInRole("DepoHead"))
+            {
+                <div class="form-group">
+                    <label asp-for="DivisionChair" class="control-label"></label>
+                    <input asp-for="DivisionChair" class="form-control" />
+                    <span asp-validation-for="DivisionChair" class="text-danger"></span>
+                </div>
+            }
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
